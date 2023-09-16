@@ -27,3 +27,4 @@ services:
         command: certonly --webroot -w /var/www/certbot --force-renewal --email test@mail.com -d devholmes.ru --agree-tos
 #https://www.programonaut.com/setup-ssl-with-docker-nginx-and-lets-encrypt/
 #https://mindsers.blog/post/https-using-nginx-certbot-docker/
+#https://mindsers.blog/post/https-using-nginx-certbot-docker/
