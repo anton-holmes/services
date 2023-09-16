@@ -1,0 +1,21 @@
+nginx_net
+
+version: '3.7'
+
+services:
+  nginx:
+    container_name: mynginx
+    image: nginx:latest
+    networks:
+      nginx_net:
+    volumes:
+      - ./nginx:/etc/nginx
+      - ./build_to_do_list:/usr/share/nginx/html
+    ports:
+      - 80:80
+      - 443:443
+    restart: unless-stopped
+
+networks:
+  nginx_net:
+    name: nginx_net
