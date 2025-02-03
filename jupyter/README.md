@@ -9,5 +9,6 @@ install ca-sertificate
 conda update
 ```conda update -n base -c conda-forge conda```
 
-conda install package
-``````
+```conda install package```
+
+```pip install --trusted-host pypi.org --truted-host pypi.python.org --trusted-host files.pythonhosted.org pytest
