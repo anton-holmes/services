@@ -1,3 +1,18 @@
+## Import VM
+Для начала получаем виртуальную машину с облачного сервиса для импорта на наш серевер
+wget http://192.168.000.000:81/api/public/dl/WrNXtCj1/cyber.vdi -O /var/lib/vz/template/iso/cyber.vdi
+Данной командой мы получили нашу виртуальную машну , и она сохранилась по пути /var/lib/vz/template/iso/cyber.vdi
+
+Далее преобразовываем ВМ в нужный нам формат (qcow2)
+qemu-img convert -f vdi /var/lib/vz/template/iso/cyber.vdi -O qcow2 cyber.qcow2
+В команде прописываем путь где лежит наша виртуальная машина и нужный нам формат конвертации
+
+Далее создаём образ данной машины с её интедификатором (11111) и прописываем ресурсы которые виделяем на данную ВМ
+qm create 11111 --memory 2048 --cores 2 --name cyber-vm --net0 virtio,bridge=vmbr0
+
+И в последствии импортируем её с интедефикатором на наш локальный диск
+qm disk import 11111 cyber.qcow2 local-lvm
+
 **NAT proxmox**
 
 **create bridge**
