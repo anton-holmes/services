@@ -32,7 +32,7 @@
 
 ```qm disk import 11111 cyber.qcow2 local-lvm```
 
-#**NAT proxmox**
+# NAT proxmox
 
 **create bridge**
 IPv4/CIDR 192.168.102.1/24
